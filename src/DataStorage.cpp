@@ -6,11 +6,11 @@ DataStorage::DataStorage(int dimension_size, int size)
 {
     for (int i = 0; i < dimension_size_; ++i)
     {
-        for (int row = 0; row < size; row++)
+        for (int row = 0; row < size; ++row)
         {
-            for (int col = 0; col < size; col++)
+            for (int col = 0; col < size; ++col)
             {
-                vec_[i][row][col] = i;
+                vec_[i][row][col] = uniform_dist(mt);
             }
         }
     }
