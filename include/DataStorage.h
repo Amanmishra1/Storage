@@ -32,9 +32,9 @@ private:
     const int dimension_size_;
     const int size_;
     std::vector<std::vector<vec_of_ints>> vec_; // This data member holds Everything
-    std::random_device ran_dev;
-    std::mt19937 mt;
-    std::uniform_int_distribution<int> uniform_dist;
+    std::random_device ran_dev_;
+    std::mt19937 mt_;
+    std::uniform_int_distribution<int> uniform_dist_;
 };
 
 #endif

@@ -2,7 +2,7 @@
 using namespace StorageSpace;
 
 DataStorage::DataStorage(int dimension_size, int size)
-    : dimension_size_(dimension_size), size_(size), vec_(dimension_size_, std::vector<vec_of_ints>(size_, vec_of_ints(size_))), mt(ran_dev()), uniform_dist((0, 1000))
+    : dimension_size_(dimension_size), size_(size), vec_(dimension_size_, std::vector<vec_of_ints>(size_, vec_of_ints(size_))), mt_(ran_dev_()), uniform_dist_((0, 1000))
 {
     for (int i = 0; i < dimension_size_; ++i)
     {
@@ -10,7 +10,7 @@ DataStorage::DataStorage(int dimension_size, int size)
         {
             for (int col = 0; col < size; ++col)
             {
-                vec_[i][row][col] = uniform_dist(mt);
+                vec_[i][row][col] = uniform_dist_(mt_);
             }
         }
     }
