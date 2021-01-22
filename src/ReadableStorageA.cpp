@@ -10,7 +10,7 @@ void ReadableStorageA::read()
     static int dim, row, col;
     static std::shared_ptr<DataStorage> data;
     static bool bvist = false;
-   
+
     if (!bvist) // first read called
     {
         data = getDataStorage();
@@ -21,18 +21,18 @@ void ReadableStorageA::read()
     }
 
     col++;
-    if(col == size_)
+    if (col == size_)
     {
         col = 0;
         row++;
     }
-    if(row == size_)
+    if (row == size_)
     {
-        row = 0; 
+        row = 0;
         col = 0;
         dim++;
     }
-    
+
     if (col < size_ && row < size_ && dim < dimension_)
     {
         std::cout << "key:[" << dim << row << col << "]"

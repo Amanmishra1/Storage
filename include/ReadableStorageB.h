@@ -7,7 +7,7 @@ namespace StorageSpace
     class ReadableStorageB : public ReadableStorage
     {
     public:
-        ReadableStorageB(int,int);
+        ReadableStorageB(int, int);
         void read() override;
     };
 } // namespace StorageSpace

@@ -11,7 +11,7 @@ namespace StorageSpace
     class ReadableStorage
     {
     public:
-        ReadableStorage(int dimension, int sz) : data_storage_(std::make_shared<DataStorage>(dimension, sz)),dimension_(dimension) ,size_(sz)
+        ReadableStorage(int dimension, int sz) : data_storage_(std::make_shared<DataStorage>(dimension, sz)), dimension_(dimension), size_(sz)
         {
         }
 
@@ -27,14 +27,9 @@ namespace StorageSpace
             return data_storage_;
         }
 
-        int getDimension() const
+        void printElementCount()
         {
-            return dimension_;
-        }
-
-        int getSize() const
-        {
-            return size_;
+            std::cout << "storage has " << data_storage_->get_storage_size() << " values" << std::endl;
         }
 
     private:

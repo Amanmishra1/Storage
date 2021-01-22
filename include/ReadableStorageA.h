@@ -8,8 +8,9 @@ namespace StorageSpace
     class ReadableStorageA : public ReadableStorage
     {
     public:
-        ReadableStorageA(int,int);
+        ReadableStorageA(int, int);
         void read() override;
+
     private:
         int dimension_;
         int size_;
