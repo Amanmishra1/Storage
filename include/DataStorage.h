@@ -26,8 +26,8 @@ public:
     virtual ~DataStorage() = default;
 
 public:
-    std::vector<std::vector<vec_of_ints>> &get_stored_element();
-
+    auto &get_stored_element();
+    int get_element_at_pos(int dim,int row ,int col);
 private:
     const int dimension_size_;
     const int size_;

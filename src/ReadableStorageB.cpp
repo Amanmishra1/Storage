@@ -1,14 +1,12 @@
 #include <ReadableStorageB.h>
 using namespace StorageSpace;
 
-ReadableStorageB::ReadableStorageB()
+ReadableStorageB::ReadableStorageB(int dimension, int size): ReadableStorage(dimension,size)
 {
+
 }
 
 void ReadableStorageB::read()
 {
-}
-
-void ReadableStorageB::info()
-{
+    
 }

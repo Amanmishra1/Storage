@@ -3,19 +3,45 @@
 
 #include <mutex>
 #include <memory>
-#include <Storage.h>
+#include <DataStorage.h>
+#include <thread>
+
 namespace StorageSpace
 {
     class ReadableStorage
     {
     public:
-        virtual void read() = 0;
-        virtual void info() = 0;
+        ReadableStorage(int dimension, int sz) : data_storage_(std::make_shared<DataStorage>(dimension, sz)),dimension_(dimension) ,size_(sz)
+        {
+        }
+
         virtual ~ReadableStorage() = default;
+
+        void info(){
+
+        };
+
+        virtual void read() = 0;
+        auto getDataStorage() const
+        {
+            return data_storage_;
+        }
+
+        int getDimension() const
+        {
+            return dimension_;
+        }
+
+        int getSize() const
+        {
+            return size_;
+        }
 
     private:
         std::mutex mu_;
-        std::unique_ptr<StorageSpace::Storage> storage_;
+        std::shared_ptr<DataStorage> data_storage_;
+        int dimension_;
+        int size_;
     };
-} // namespace Storage
+} // namespace StorageSpace
 #endif

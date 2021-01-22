@@ -2,14 +2,17 @@
 #define READABLE_STORAGE_A_H
 
 #include <ReadableStorage.h>
+
 namespace StorageSpace
 {
     class ReadableStorageA : public ReadableStorage
     {
     public:
-        explicit ReadableStorageA();
+        ReadableStorageA(int,int);
         void read() override;
-        void info() override;
+    private:
+        int dimension_;
+        int size_;
     };
 } // namespace StorageSpace
 #endif
