@@ -3,7 +3,7 @@
 
 using namespace StorageSpace;
 
-std::mutex mtx;
+std::mutex mu;
 
 ReadableStorageB::ReadableStorageB(int dimension, int size) : ReadableStorage(dimension, size), dimension_(dimension), size_(size)
 {
@@ -11,7 +11,7 @@ ReadableStorageB::ReadableStorageB(int dimension, int size) : ReadableStorage(di
 
 void ReadableStorageB::read()
 {
-    std::lock_guard<std::mutex> lock(mtx);
+    std::lock_guard<std::mutex> lock(mu);
     
     static std::shared_ptr<DataStorage> data;
     static bool bvist = false;

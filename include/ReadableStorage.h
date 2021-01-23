@@ -18,7 +18,7 @@ namespace StorageSpace
         virtual ~ReadableStorage() = default;
 
         void info(){
-
+            std::cout << "storage has " << data_storage_->get_storage_size() << " values" << std::endl;
         };
 
         virtual void read() = 0;
@@ -26,12 +26,7 @@ namespace StorageSpace
         {
             return data_storage_;
         }
-
-        void printElementCount()
-        {
-            std::cout << "storage has " << data_storage_->get_storage_size() << " values" << std::endl;
-        }
-
+        
     private:
         std::mutex mu_;
         std::shared_ptr<DataStorage> data_storage_;

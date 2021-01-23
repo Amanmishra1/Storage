@@ -9,8 +9,8 @@ int main()
     auto readableStorageA = std::make_shared<StorageSpace::ReadableStorageA>(3, 3);
     auto readableStorageB = std::make_shared<StorageSpace::ReadableStorageB>(5, 10);
 
-    readableStorageA->printElementCount();
-    readableStorageB->printElementCount();
+    readableStorageA->info();
+    readableStorageB->info();
 
     readableStorageA->read();
     readableStorageA->read();
