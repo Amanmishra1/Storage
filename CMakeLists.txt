@@ -11,4 +11,3 @@ add_executable(Storage src/DataStorage.cpp
 
 target_include_directories(Storage PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
-#add_subdirectory(test)  // Some tests in the end
