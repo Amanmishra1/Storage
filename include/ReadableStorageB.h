@@ -9,6 +9,10 @@ namespace StorageSpace
     public:
         ReadableStorageB(int, int);
         void read() override;
+    private:
+        std::vector<std::string> visited_indexes_;
+        int dimension_;
+        int size_;
     };
 } // namespace StorageSpace
 #endif

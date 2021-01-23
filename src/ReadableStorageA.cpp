@@ -1,12 +1,16 @@
 #include <ReadableStorageA.h>
 using namespace StorageSpace;
 
+std::mutex mtx;
+
 ReadableStorageA::ReadableStorageA(int dimension, int size) : ReadableStorage(dimension, size), dimension_(dimension), size_(size)
 {
 }
 
 void ReadableStorageA::read()
 {
+    std::lock_guard<std::mutex> lock(mtx);
+
     static int dim, row, col;
     static std::shared_ptr<DataStorage> data;
     static bool bvist = false;
